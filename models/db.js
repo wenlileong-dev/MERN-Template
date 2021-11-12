@@ -3,16 +3,15 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 connectionString =
-  "mongodb+srv://<username>:<password>@cluster0.4ixfz.mongodb.net/Template?retryWrites=true&w=majority";
+  "mongodb+srv://<username>:<password>@personalproject.3gem7.mongodb.net/investmentPortfolio?retryWrites=true&w=majority";
+
 dbAddress = connectionString
   .replace("<username>", process.env.MONGO_USERNAME)
   .replace("<password>", process.env.MONGO_PASSWORD);
 
 mongoose.connect(dbAddress, {
   useNewUrlParser: true,
-  useCreateIndex: true,
   useUnifiedTopology: true,
-  useFindAndModify: false,
 });
 
 const db = mongoose.connection;
