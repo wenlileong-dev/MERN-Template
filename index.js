@@ -24,6 +24,10 @@ app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`The server is runnning at port ${port}`);
-});
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => {
+    // console.log(`The server is runnning at port ${port}`);
+  });
+}
+
+module.exports = app;

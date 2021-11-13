@@ -12,11 +12,11 @@ exports.userValidator = async (req, res, next) => {
   const { email, password } = req.body;
   if (email) {
     const findEmail = await User.findOne({ email });
-    if (findEmail) {
-      errorMsg.push("email is registered");
-    }
     if (!validator.isEmail(email)) {
       errorMsg.push("email is not valid");
+    }
+    if (findEmail) {
+      errorMsg.push("email is registered");
     }
   } else {
     errorMsg.push("email is required");

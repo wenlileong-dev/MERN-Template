@@ -12,7 +12,7 @@ exports.userRegister = async (req, res) => {
         errorMsg = newUser.validateSync();
         const saveUser = await newUser.save();
         res.cookie("token", token);
-        res.json({ status: 200, data: saveUser });
+        res.json({ status: 200, data: saveUser, token });
       } catch (error) {
         res.json({ status: 400, errorMsg: ["error when saving user"] });
       }
@@ -30,7 +30,7 @@ exports.userLogin = async (req, res) => {
         if (isMatch) {
           const token = user.generateAuthToken();
           res.cookie("token", token);
-          res.json({ status: 200, data: user });
+          res.json({ status: 200, data: user, token });
         } else {
           res.json({
             status: 400,
@@ -50,4 +50,15 @@ exports.userLogin = async (req, res) => {
 exports.userLogout = async (req, res) => {
   res.clearCookie("token");
   res.json({ status: 200 });
+};
+
+//delete user - use for testing delete registered user
+exports.deleteUser = async (req, res) => {
+  let userID = req.user._id;
+  try {
+    let deleteUser = await User.findByIdAndDelete(userID);
+    res.json({ status: 200, data: deleteUser });
+  } catch (error) {
+    res.json({ status: 400, errorMsg: ["error when deleting user"] });
+  }
 };
