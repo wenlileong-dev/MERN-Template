@@ -1,24 +1,16 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import Home from "./pages/Home/Home";
-
+import NavagationBar from "./components/NavigationBar/NavagationBar";
+import Login from "./pages/Auth/Login";
 function App() {
   return (
     <React.Fragment>
       <Router>
-        <h1>This is my MERN template</h1>
-        <Switch>
-          <Route path="/home" exact>
-            <Home />
-          </Route>
-          <Redirect to="/home"></Redirect>
-        </Switch>
+        <NavagationBar />
+        <Routes>
+          <Route path="/login" element={<Login />}></Route>
+        </Routes>
       </Router>
     </React.Fragment>
   );
