@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636781969542" clover="3.2.0">
-  <project timestamp="1636781969542" name="All files">
+<coverage generated="1636782564044" clover="3.2.0">
+  <project timestamp="1636782564044" name="All files">
     <metrics statements="124" coveredstatements="115" conditionals="22" coveredconditionals="21" methods="15" coveredmethods="11" elements="161" coveredelements="147" complexity="0" loc="124" ncloc="124" packages="5" files="9" classes="9"/>
     <package name="MERN-Template">
       <metrics statements="21" coveredstatements="19" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="0"/>

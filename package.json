@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --coverage --forceExit --watchAll --maxWorkers=1 ",
+    "test": "jest --verbose --coverage --watchAll --maxWorkers=1 --forceExit",
+    "test-automate": "jest --forceExit",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
