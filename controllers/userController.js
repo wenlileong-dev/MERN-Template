@@ -14,7 +14,7 @@ exports.userRegister = async (req, res) => {
         res.cookie("token", token);
         res.json({ status: 200, data: saveUser, token });
       } catch (error) {
-        res.json({ status: 400, errorMsg: ["error when saving user"] });
+        res.json({ status: 400, errorMsg: "error when saving user" });
       }
     });
   });
@@ -34,15 +34,15 @@ exports.userLogin = async (req, res) => {
         } else {
           res.json({
             status: 400,
-            errorMsg: ["email and password is not match"],
+            errorMsg: "email and password is not match",
           });
         }
       });
     } else {
-      res.json({ status: 400, errorMsg: ["email not found"] });
+      res.json({ status: 400, errorMsg: "email not found" });
     }
   } catch (error) {
-    res.json({ status: 400, errorMsg: ["error when login user"] });
+    res.json({ status: 400, errorMsg: "error when login user" });
   }
 };
 
@@ -52,6 +52,17 @@ exports.userLogout = async (req, res) => {
   res.json({ status: 200 });
 };
 
+//check if user login
+exports.authCheck = async (req, res) => {
+  let userID = req.user._id;
+  try {
+    let user = await User.findById(userID);
+    res.json({ status: 200, data: user });
+  } catch (error) {
+    res.json({ status: 400, errorMsg: "error when doing auth check" });
+  }
+};
+
 //delete user - use for testing delete registered user
 exports.deleteUser = async (req, res) => {
   let userID = req.user._id;
@@ -59,6 +70,6 @@ exports.deleteUser = async (req, res) => {
     let deleteUser = await User.findByIdAndDelete(userID);
     res.json({ status: 200, data: deleteUser });
   } catch (error) {
-    res.json({ status: 400, errorMsg: ["error when deleting user"] });
+    res.json({ status: 400, errorMsg: "error when deleting user" });
   }
 };

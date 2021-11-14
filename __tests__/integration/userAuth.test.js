@@ -34,16 +34,14 @@ describe("secret route testing", function () {
       .post("/api/user/login")
       .send(loginInputInvalid1);
     expect(registerres.body.status).toBe(400);
-    expect(registerres.body.errorMsg).toContainEqual("email not found");
+    expect(registerres.body.errorMsg).toBe("email not found");
   });
   test("login with incorrect password", async function () {
     const registerres = await supertest(app)
       .post("/api/user/login")
       .send(loginInputInvalid2);
     expect(registerres.body.status).toBe(400);
-    expect(registerres.body.errorMsg).toContainEqual(
-      "email and password is not match"
-    );
+    expect(registerres.body.errorMsg).toBe("email and password is not match");
   });
   test("login with valid input", async function () {
     const registerres = await supertest(app)

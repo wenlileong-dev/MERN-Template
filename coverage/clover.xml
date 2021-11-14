@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636801480962" clover="3.2.0">
-  <project timestamp="1636801480962" name="All files">
-    <metrics statements="124" coveredstatements="115" conditionals="22" coveredconditionals="21" methods="15" coveredmethods="11" elements="161" coveredelements="147" complexity="0" loc="124" ncloc="124" packages="5" files="9" classes="9"/>
+<coverage generated="1636857448535" clover="3.2.0">
+  <project timestamp="1636857448536" name="All files">
+    <metrics statements="131" coveredstatements="117" conditionals="22" coveredconditionals="21" methods="16" coveredmethods="11" elements="169" coveredelements="149" complexity="0" loc="131" ncloc="131" packages="5" files="9" classes="9"/>
     <package name="MERN-Template">
       <metrics statements="21" coveredstatements="19" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="0"/>
       <file name="index.js" path="D:\learning\webDevelopment\MERN-Template\index.js">
@@ -30,7 +30,7 @@
       </file>
     </package>
     <package name="MERN-Template.controllers">
-      <metrics statements="49" coveredstatements="44" conditionals="6" coveredconditionals="6" methods="9" coveredmethods="8"/>
+      <metrics statements="55" coveredstatements="45" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="8"/>
       <file name="authUser.js" path="D:\learning\webDevelopment\MERN-Template\controllers\authUser.js">
         <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="3" type="stmt"/>
@@ -51,7 +51,7 @@
         <line num="3" count="1" type="stmt"/>
       </file>
       <file name="userController.js" path="D:\learning\webDevelopment\MERN-Template\controllers\userController.js">
-        <metrics statements="36" coveredstatements="31" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="6"/>
+        <metrics statements="42" coveredstatements="32" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="6"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
@@ -83,11 +83,17 @@
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="56" count="2" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
       </file>
     </package>
     <package name="MERN-Template.models">
@@ -119,7 +125,7 @@
       </file>
     </package>
     <package name="MERN-Template.routes">
-      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="secretRouter.js" path="D:\learning\webDevelopment\MERN-Template\routes\secretRouter.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
@@ -130,7 +136,7 @@
         <line num="8" count="2" type="stmt"/>
       </file>
       <file name="userRouter.js" path="D:\learning\webDevelopment\MERN-Template\routes\userRouter.js">
-        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -140,7 +146,8 @@
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
       </file>
     </package>
     <package name="MERN-Template.validation">

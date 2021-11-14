@@ -12,16 +12,17 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Stack from "@mui/material/Stack";
-import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 
-function Login(props) {
+import RegisterErrorMsg from "./RegisterErrorMsg";
+
+function Register(props) {
   const [values, setValues] = React.useState({
     email: "",
     password: "",
     showPassword: false,
   });
-  const [errorMsg, setErrorMsg] = React.useState("");
+  const [errorMsg, setErrorMsg] = React.useState([]);
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -40,7 +41,7 @@ function Login(props) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    let result = await axios.post("/api/user/login", {
+    let result = await axios.post("/api/user/register", {
       email: values.email,
       password: values.password,
     });
@@ -51,16 +52,12 @@ function Login(props) {
       setErrorMsg(result.data.errorMsg);
     }
   };
-
-  const toRegisterPage = () => {
-    window.location = "/register";
-  };
   return (
     <React.Fragment>
       <Container>
         <Box sx={{ py: 5, width: "50ch" }} className="center">
           <Typography variant="h4" gutterBottom component="div">
-            Login
+            Register
           </Typography>
 
           <form onSubmit={handleLogin}>
@@ -70,7 +67,10 @@ function Login(props) {
               alignItems="center"
               spacing={3}
             >
-              {errorMsg && <Alert severity="error">{errorMsg}</Alert>}
+              {errorMsg.length !== 0 &&
+                errorMsg.map((msg, i) => {
+                  return <RegisterErrorMsg msg={msg} key={`msg${i}`} />;
+                })}
               <FormControl sx={{ m: 1, width: "30ch" }} variant="standard">
                 <TextField
                   id="standard-basic"
@@ -108,18 +108,9 @@ function Login(props) {
                   }
                 />
               </FormControl>
-              <div>
-                <Button variant="contained" type="submit" sx={{ mx: 2 }}>
-                  Log In
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{ mx: 2 }}
-                  onClick={toRegisterPage}
-                >
-                  Register
-                </Button>
-              </div>
+              <Button variant="contained" type="submit" sx={{ mx: 2 }}>
+                Sign Up
+              </Button>
             </Stack>
           </form>
         </Box>
@@ -128,4 +119,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default Register;
